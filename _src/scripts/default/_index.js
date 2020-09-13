@@ -1,4 +1,4 @@
-import noJs from './noJs'
+import fontLoader from './fontLoader'
 import social from './share'
 import menu from './menu'
 
