@@ -1,0 +1,10 @@
+.skip-main {
+    @apply fixed z-50;
+    top: $gutter;
+    left: -($gutter * 20);
+
+    &:focus,
+    &:active {
+        left: $gutter * 2;
+    }
+}

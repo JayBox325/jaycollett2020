@@ -1,0 +1,26 @@
+/*
+    MOBILE MENU
+*/
+
+// @media screen and (max-width: 599px) {
+    .menu {
+        @apply fixed shadow top-0 right-0 h-screen w-screen z-40 p-4 bg-blue-300 invisible;
+
+        &__list {
+            @apply list-none;
+        }
+
+        &__item {
+            @apply mb-2
+        }
+
+        &__link {
+            @apply font-bold leading-none text-2xl;
+        }
+    }
+// }
+
+
+// @media screen and (min-width: 600px) {
+
+// }
