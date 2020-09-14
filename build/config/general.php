@@ -27,6 +27,12 @@ return [
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => true,
 
+        // CMS routing
+        'aliases' => [
+            '@rootUrl' => getenv('DEFAULT_SITE_URL'),
+            '@assetUrl' => getenv('DEFAULT_SITE_URL') + '/uploads',
+        ],
+
     ],
 
     // Dev environment settings
