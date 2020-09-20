@@ -1,0 +1,8 @@
+@function set-text-color($color) {
+    // @debug "color: #{$color}";
+    @if (lightness($color) > 80) {
+        @return color('black');
+    } @else {
+        @return color('white');
+    }
+}

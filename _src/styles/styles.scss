@@ -1,0 +1,26 @@
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Core
+// @import '_core/_index';
+@import '_core/**/*';
+
+// Base
+@import 'base/**/*';
+
+// Typography
+@import 'typography/**/*';
+
+// Layout
+@import 'layout/**/*';
+
+// Components
+@import 'components/**/*';
+
+// Form
+@import 'form/**/*';
+
+// Elements
+@import 'elements/**/*';
