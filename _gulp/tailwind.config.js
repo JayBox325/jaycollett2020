@@ -15,13 +15,13 @@ module.exports = {
       sm: '600px',
       md: '900px',
       lg: '1200px',
-      xl: '1500px',
+      xl: '1600px',
     },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
 
-      black: '#000',
+      black: '#2B2B2B',
       white: '#fff',
 
       // Social
@@ -299,8 +299,9 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      serif: ['bely', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+      display: ['bely-display']
     },
     fontSize: {
       xs: '0.75rem',

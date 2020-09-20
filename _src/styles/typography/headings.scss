@@ -1,17 +1,17 @@
 h1,.h1 {
-    @apply font-bold leading-none text-5xl font-sans;
+    @apply font-bold leading-tight text-5xl font-display;
 
     @screen sm {
         @apply text-6xl;
     }
 
-    @screen lg {
+    @screen xl {
         @apply text-7xl;
     }
 }
 
 h2,.h2 {
-    @apply font-bold leading-none text-2xl;
+    @apply font-bold leading-none text-2xl font-display;
 
     @screen lg {
         @apply text-4xl leading-tight;
@@ -52,4 +52,37 @@ h5,.h5 {
 
 h6,.h6 {
     @apply font-black leading-none text-base;
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+    a {
+        position: relative;
+
+        &:before {
+            @apply bg-orange-500;
+            content: '';
+            display: block;
+            height: 50%;
+            width: calc(100% + .5rem);
+            z-index: -1;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate3d(-50%,0,0);
+            transition: height .2s ease-in-out, width .2s ease-in-out;
+        }
+
+        &:hover,
+        &:focus {
+            &:before {
+                height: 100%;
+                width: calc(100% + 1rem);
+            }
+        }
+    }
 }

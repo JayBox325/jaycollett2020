@@ -3,4 +3,10 @@
         z-index:2;
         position:relative;
     }
+
+    &__inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
 }

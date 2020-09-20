@@ -548,9 +548,12 @@ __webpack_require__.r(__webpack_exports__);
 
 function fullPageJS() {
   var $bgElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-bg-el]');
+  var easing = 'cubic-bezier(.8, 0.000, 0.000, 1)';
   new fullpage_js__WEBPACK_IMPORTED_MODULE_1___default.a('#fullpage', {
     licenseKey: '',
     scrollingSpeed: 1000,
+    easingcss3: easing,
+    // http://matthewlein.com/ceaser/
     // Slides
     slidesNavigation: true,
     slidesNavPosition: 'bottom',

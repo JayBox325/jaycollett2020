@@ -1,9 +1,52 @@
+{% import '_macros/macros' as macro %}
+
 <div id="fullpage" class="fullpage">
     <div class="bg-el" data-bg-el></div>
-    <div class="section fullpage__section row" data-bg-width="100%" data-bg-color="primary">
-        <h1>{{ entry.title }}</h1>
-    </div>
-    <div class="section fullpage__section row" data-bg-width="33%" data-bg-color="secondary">
-        <h1>{{ entry.title }}</h1>
-    </div>
+    <section class="section fullpage__section text-white" data-bg-width="100%" data-bg-color="primary">
+        <div class="fullpage__inner row">
+            <div class="container">
+                <div class="text-white max-w-xl mx-auto px-4">
+                    <h1 class="text-center">
+                        <div>
+                            {{ macro.icon('1138', 'full') }}
+                        </div>
+                        <span hidden>1138</span>
+                        <span class="h4 block md:pt-2">Digital Creativity</span>
+                    </h1>
+                </div>
+            </div>
+            <p class="scroll-indicator">Scroll to get started</p>
+        </div>
+    </section>
+    <section class="section fullpage__section text-white" data-bg-width="100%" data-bg-color="secondary">
+        <div class="fullpage__inner row">
+            <div class="container">
+                <div class="text-center max-w-5xl mx-auto">
+                    <h2 class="h1">Web design and development with a passion for the details built with <a href="https://craftcms.com/" {{ macro.external(true) }}>CraftCMS</a>.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section fullpage__section" data-bg-width="50%" data-bg-color="secondary">
+        <div class="fullpage__inner row">
+            <div class="container">
+            
+                <div class="grid grid-cols-12 gap-32">
+                    <div class="col-span-6 text-white">
+                        <h2 class="h1">Web design and development with a passion for the details built with CraftCMS.</h2>
+                    </div>
+                    <div class="col-span-6 text-black">
+                        <div class="w-content">
+                            <p class="font-bold">A freelance digital designer and developer in Bath, England.</p>
+                            <p>Where being detail-oriented is what make a project the best it can be. 1138 is not just a Star Wars reference hidden in plain sight, but for me, it represents a continued dedication to not forget the details that take a project further.</p>
+                            <h3>Doing good with what I do.</h3>
+                            <p>I pride myself in delivering projects for clients that do good in the world around them with accessible websites that are open to as many users as possible.</p>
+                            <p>Working with clients like Football Foundations and businesses that are developing future generations give me the opportunity to give back to the world with the skills I have.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </div>

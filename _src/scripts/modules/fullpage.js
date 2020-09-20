@@ -3,10 +3,12 @@ import fullpage from 'fullpage.js'
 
 export default function fullPageJS() {
     const $bgElement = $('[data-bg-el]')
+    const easing = 'cubic-bezier(.8, 0.000, 0.000, 1)' 
 
     new fullpage('#fullpage', {
         licenseKey: '',
         scrollingSpeed: 1000,
+        easingcss3: easing, // http://matthewlein.com/ceaser/
 
         // Slides
         slidesNavigation: true,

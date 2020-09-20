@@ -1,0 +1,7 @@
+.scroll-indicator {
+    @apply font-bold text-center;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+}

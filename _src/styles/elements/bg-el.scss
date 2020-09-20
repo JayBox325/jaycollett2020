@@ -4,7 +4,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    transition: background .8s ease-in-out, width 1s cubic-bezier(.84, .14, .24, .96);
+    transition: background .6s cubic-bezier(.8, 0.000, 0.000, 1) .2s, width .6s cubic-bezier(.8, 0.000, 0.000, 1) .2s;
     height: 100%;
     left: 0;
     z-index: 0;
