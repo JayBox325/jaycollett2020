@@ -1,0 +1,27 @@
+.bg-el {
+    @apply bg-green-500;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: background .8s ease-in-out, width 1s cubic-bezier(.84, .14, .24, .96);
+    height: 100%;
+    left: 0;
+    z-index: 0;
+
+    @each $name, $hex in $colors {
+        &--#{$name} {
+            // Setting the text colour based on how dark/light the bg is.
+            // @debug "Hex: #{$hex}";
+            // color: set-text-color($hex);
+            
+            &:before {
+                background-color: $hex;
+            }
+
+            + .row--#{$name} {
+                padding-top: 0;
+            }
+        }
+    }
+}
