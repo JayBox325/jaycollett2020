@@ -2,8 +2,8 @@
     {% if state == true or state == '_blank' %} target="_blank" rel="noopener noreferrer"{% endif %}
 {% endmacro %}
 
-{% macro icon(symbol, size = 'md') %}
-    <svg role="img" aria-hidden="true" class="icon icon--{{ symbol }} icon--{{ size }}">
+{% macro icon(symbol, size = 'md', viewBox) %}
+    <svg role="img" aria-hidden="true" class="icon icon--{{ symbol }} icon--{{ size }}"{% if viewBox %} viewBox="{{ viewBox }}"{% endif %}>
         <use xlink:href="#{{ symbol }}"></use>
     </svg>
 {% endmacro %}

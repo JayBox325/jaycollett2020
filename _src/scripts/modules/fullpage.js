@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import fullpage from 'fullpage.js'
+import '../../../node_modules/fullpage.js/vendors/scrolloverflow.min.js'
 
 export default function fullPageJS() {
     const $bgElement = $('[data-bg-el]')
@@ -10,17 +11,27 @@ export default function fullPageJS() {
         scrollingSpeed: 1000,
         easingcss3: easing, // http://matthewlein.com/ceaser/
 
+        // Sections
+        anchors: [
+            'landing',
+            'intro',
+            'about',
+            'portfolio',
+            // 'blog'
+        ],
+
         // Slides
+        scrollOverflow: true,
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
         controlArrows: false,
 
         onLeave: function(origin, destination, direction){
             let nextBg = destination.item.getAttribute('data-bg-color')
-            let nextWidth = destination.item.getAttribute('data-bg-width')
+            let nextSize = destination.item.getAttribute('data-bg-size')
 
-            $bgElement.css('width', nextWidth)
-            $bgElement.addClass(`bg-el--${nextBg}`)
+            $bgElement.attr('data-size', `${nextSize}`)
+            $bgElement.attr('data-color', `${nextBg}`)
         },
         
         // onSlideLeave: function(section, origin, destination, direction) {

@@ -1,12 +1,12 @@
 body {
-    @apply text-gray-800 leading-relaxed text-base font-serif;
+    @apply text-black leading-relaxed text-xl font-serif;
 
     @screen md {
-        @apply text-lg;
+        @apply text-xl;
     }
 
     @screen lg {
-        @apply text-xl;
+        @apply text-2xl;
     }
 }
 
@@ -28,11 +28,22 @@ body {
     }
 
     a {
-        @apply text-teal-800;
+        transition: background .2s ease-in-out, color .2s ease-in-out;
+        @apply text-orange-500;
         border-bottom: 1px solid;
 
         &:hover {
-            @apply bg-blue-200;
+            @apply bg-orange-500 text-white;
+        }
+
+        .bg-orange-500 &,
+        .row--secondary &,
+        [data-bg-color=secondary] & {
+            @apply text-green-500;
+
+            &:hover {
+                @apply bg-green-500 text-white;
+            }
         }
     }
 }

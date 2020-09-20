@@ -10,18 +10,22 @@
     z-index: 0;
 
     @each $name, $hex in $colors {
-        &--#{$name} {
-            // Setting the text colour based on how dark/light the bg is.
-            // @debug "Hex: #{$hex}";
-            // color: set-text-color($hex);
-            
-            &:before {
-                background-color: $hex;
-            }
+        &[data-color=#{$name}] {
+            background-color: $hex;
+        }
+    }
 
-            + .row--#{$name} {
-                padding-top: 0;
-            }
+    &[data-size=half] {
+        @screen lg {
+            height: 100%;
+            width: 50%;
+        }
+    }
+
+    &[data-size=small] {
+        @screen lg {
+            height: 100%;
+            width: 20%;
         }
     }
 }

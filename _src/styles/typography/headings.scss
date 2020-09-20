@@ -1,5 +1,5 @@
 h1,.h1 {
-    @apply font-bold leading-tight text-5xl font-display;
+    @apply leading-tight text-3xl font-display;
 
     @screen sm {
         @apply text-6xl;
@@ -11,7 +11,7 @@ h1,.h1 {
 }
 
 h2,.h2 {
-    @apply font-bold leading-none text-2xl font-display;
+    @apply leading-none text-2xl font-display;
 
     @screen lg {
         @apply text-4xl leading-tight;
@@ -19,7 +19,7 @@ h2,.h2 {
 }
 
 h3,.h3 {
-    @apply font-bold leading-tight text-2xl;
+    @apply leading-tight text-2xl font-display;
 
     @screen md {
         @apply text-3xl;
@@ -31,7 +31,7 @@ h3,.h3 {
 }
 
 h4,.h4 {
-    @apply font-bold leading-relaxed text-lg;
+    @apply font-bold leading-relaxed text-lg font-display;
 
     @screen md {
         @apply text-xl;

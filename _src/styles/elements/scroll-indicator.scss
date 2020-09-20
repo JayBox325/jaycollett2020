@@ -4,4 +4,12 @@
     bottom: 2rem;
     left: 50%;
     transform: translate3d(-50%,0,0);
+
+    @screen md {
+        bottom: 3rem;
+    }
+
+    @screen xl {
+        bottom: 4.5rem;
+    }
 }
