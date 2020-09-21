@@ -565,6 +565,7 @@ function fullPageJS() {
     slidesNavigation: true,
     slidesNavPosition: 'bottom',
     controlArrows: false,
+    dragAndMove: false,
     onLeave: function onLeave(origin, destination, direction) {
       var nextBg = destination.item.getAttribute('data-bg-color');
       var nextSize = destination.item.getAttribute('data-bg-size');

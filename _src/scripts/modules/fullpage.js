@@ -25,6 +25,7 @@ export default function fullPageJS() {
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
         controlArrows: false,
+        dragAndMove: false,
 
         onLeave: function(origin, destination, direction){
             let nextBg = destination.item.getAttribute('data-bg-color')
