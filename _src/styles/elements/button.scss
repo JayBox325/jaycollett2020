@@ -3,6 +3,7 @@
     appearance: none;
     display: inline-block;
     position: relative;
+    transition: color .2s ease-in-out;
 
     @screen md {
         @apply text-3xl;
@@ -21,14 +22,14 @@
         position: absolute;
         bottom: 0;
         left: 50%;
-        transform: translate3d(-50%,0,0);
+        transform: translate3d(-50%,.2rem,0);
         transition: height .2s ease-in-out, width .2s ease-in-out;
     }
 
     &:hover,
     &:focus {
         &:before {
-            height: 100%;
+            height: calc(100% + .2rem);
             width: calc(100% + 1rem);
         }
     }
@@ -41,6 +42,22 @@
         &:hover,
         &:focus {
             @apply text-white;
+        }
+    }
+
+    &--stfc {
+        &:before {
+            @apply bg-black;
+            
+            @screen lg {
+                @apply bg-stfc;
+            }
+        }
+    }
+
+    &--mamacodes {
+        &:before {
+            @apply bg-yellow-500;
         }
     }
 }

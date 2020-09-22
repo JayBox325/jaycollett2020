@@ -32,5 +32,7 @@ $colors: (
     'warning':      $warning,
     'gray':         $gray,
     'white':        $white,
-    'black':        $black
+    'black':        $black,
+    'stfc':         theme('colors.stfc'),
+    'mamacodes':    theme('colors.mamacodes')
 );

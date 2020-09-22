@@ -1,0 +1,14 @@
+.portfolio-image {
+    @apply hidden absolute;
+    bottom: 0;
+    left: 23%;
+    transform: translate3d(-50%,0,0);
+    width: 33%;
+    max-height: 95%;
+    object-fit: contain;
+    object-position: bottom center;
+
+    @screen lg {
+        @apply block;
+    }
+}

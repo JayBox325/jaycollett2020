@@ -1,4 +1,13 @@
+{% import '_macros/macros' as macro %}
+
 {% set label = label ?? "Read more" %}
 {% set classes = classes ?? null %}
+{% set action = action ?? '#' %}
+{% set type = type ?? 'link' %}
+{% set external = external ?? false %}
 
-<button class="btn {{ classes }}">{{ label }}</button>
+{% if type == 'button' %}
+    <button {{ action }} class="btn {{ classes }}">{{ label }}</button>
+{% elseif type == 'link' %}
+    <a href="{{ action }}" {{ macro.external(external) }} class="btn {{ classes }}">{{ label }}</a>
+{% endif %}

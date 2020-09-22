@@ -24,6 +24,9 @@ module.exports = {
       black: '#2B2B2B',
       white: '#fff',
 
+      mamacodes: '#07a2c5',
+      stfc: '#dd1c15',
+
       // Social
       facebook: '#3b5998',
       twitter: '#1da1f2',

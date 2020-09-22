@@ -552,35 +552,119 @@ __webpack_require__.r(__webpack_exports__);
 function fullPageJS() {
   var $bgElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-bg-el]');
   var easing = 'cubic-bezier(.8, 0.000, 0.000, 1)';
-  new fullpage_js__WEBPACK_IMPORTED_MODULE_1___default.a('#fullpage', {
-    licenseKey: '',
-    scrollingSpeed: 1000,
-    easingcss3: easing,
-    // http://matthewlein.com/ceaser/
-    // Sections
-    anchors: ['landing', 'intro', 'about', 'portfolio' // 'blog'
-    ],
-    // Slides
-    scrollOverflow: true,
-    slidesNavigation: true,
-    slidesNavPosition: 'bottom',
-    controlArrows: false,
-    dragAndMove: false,
-    onLeave: function onLeave(origin, destination, direction) {
-      var nextBg = destination.item.getAttribute('data-bg-color');
-      var nextSize = destination.item.getAttribute('data-bg-size');
-      $bgElement.attr('data-size', "".concat(nextSize));
-      $bgElement.attr('data-color', "".concat(nextBg));
-    } // onSlideLeave: function(section, origin, destination, direction) {
-    //     if (direction == 'right') {
-    //         fullpage_api.setAllowScrolling(false)
-    //         fullpage_api.setKeyboardScrolling(false)
-    //     } else {
-    //         fullpage_api.setAllowScrolling(true)
-    //         fullpage_api.setKeyboardScrolling(true)
-    //     }
-    // }
+  var activeFullPage = false;
 
+  function checkOrientation() {
+    // iOS orientation
+    if (window.orientation == -90 || window.orientation == 90) {
+      destroyFullPage();
+    } else if (window.orientation == 0) {
+      renderFullPage(); // Desktop orientation
+    } else if (window.orientation == null) {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height() < 550) {
+        if (screen.availHeight < screen.availWidth || window.orientation == -90) {
+          destroyFullPage();
+        } else if (screen.availHeight > screen.availWidth) {
+          renderFullPage();
+        }
+      } else {
+        renderFullPage();
+      }
+    }
+  }
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('orientationchange', function () {
+    checkOrientation();
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('resize', function () {
+    checkOrientation();
+  });
+  checkOrientation();
+
+  function destroyFullPage() {
+    if (activeFullPage == true) {
+      activeFullPage = false;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('fullpage-active');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('fullpage-inactive');
+      fullpage_api.destroy('all');
+    }
+  }
+
+  function renderFullPage() {
+    if (activeFullPage == false) {
+      activeFullPage = true;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('fullpage-active');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('fullpage-inactive');
+      new fullpage_js__WEBPACK_IMPORTED_MODULE_1___default.a('#fullpage', {
+        licenseKey: '',
+        scrollingSpeed: 1000,
+        easingcss3: easing,
+        // http://matthewlein.com/ceaser/
+        // Sections
+        anchors: ['landing', 'intro', 'about', 'portfolio' // 'blog'
+        ],
+        // Slides
+        scrollOverflow: true,
+        scrollOverflowReset: true,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        controlArrows: false,
+        dragAndMove: false,
+        loopHorizontal: false,
+        onLeave: function onLeave(origin, destination, direction) {
+          var nextBg = destination.item.getAttribute('data-bg-color');
+          var nextSize = destination.item.getAttribute('data-bg-size');
+          $bgElement.attr('data-size', "".concat(nextSize));
+          $bgElement.attr('data-color', "".concat(nextBg)); // // Hiding elements on next slide
+          // if (!destination.item.classList.contains(preparedClass)) {
+          //     elements = getSectionElements(`${destination.index}-0`)
+          //     hideElements(`${destination.index}-0`, elements)
+          // }
+        },
+        // afterLoad: function(origin, destination, direction){
+        //     if (!destination.item.classList.contains(visibleClass)) {
+        //         if (elements.length === 0) {
+        //             elements = getSectionElements(`${destination.index}-0`)
+        //         }
+        //         enterTransition(`${destination.index}-0`, elements)
+        //         elements = []
+        //     }
+        // },
+        onSlideLeave: function onSlideLeave(section, origin, destination, direction) {
+          var nextBg = destination.item.getAttribute('data-bg-color');
+          var nextSize = destination.item.getAttribute('data-bg-size');
+          $bgElement.attr('data-size', "".concat(nextSize));
+          $bgElement.attr('data-color', "".concat(nextBg));
+
+          if (destination.index > 0) {
+            console.log('DISABLE SCROLLING');
+            fullpage_api.setAllowScrolling(false, 'down, up');
+            fullpage_api.setKeyboardScrolling(false, 'down, up');
+          } else {
+            fullpage_api.setAllowScrolling(true);
+            fullpage_api.setKeyboardScrolling(true);
+          } // if (!destination.item.classList.contains(visibleClass)) {
+          //     elements = getSectionElements(`${section.index}-${destination.index}`)
+          //     hideElements(`${section.index}-${destination.index}`, elements)
+          // }
+
+        } // afterSlideLoad (section, origin, destination, direction) {
+        //     // console.log(`Loaded slide ${section.index}-${destination.index}`)
+        //     if (!destination.item.classList.contains(visibleClass)) {
+        //         if (elements.length === 0) {
+        //             elements = getSectionElements(`${section.index}-${destination.index}`)
+        //         }
+        //         enterTransition(`${section.index}-${destination.index}`, elements)
+        //         elements = []
+        //     }
+        // },
+
+      });
+    }
+  }
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-slide-move=right').on('click', function () {
+    fullpage_api.moveSlideRight();
   });
 }
 

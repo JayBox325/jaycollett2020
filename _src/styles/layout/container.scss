@@ -1,16 +1,21 @@
 .container {
-    @apply px-4 mx-auto max-w-full;
+    @apply px-4 mx-auto relative max-w-full;
     min-width: 300px;
+    z-index: 1;
 
     @screen xs {
         // max-width: 1400px;
     }
 
     @screen md {
-        @apply px-8;
+        @apply px-16;
     }
 
     @screen lg {
-        @apply px-16;
+        @apply px-20;
+    }
+    
+    @screen xl {
+        @apply px-0;
     }
 }

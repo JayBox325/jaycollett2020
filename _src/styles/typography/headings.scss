@@ -11,10 +11,18 @@ h1,.h1 {
 }
 
 h2,.h2 {
-    @apply leading-none text-2xl font-display;
+    @apply leading-none text-3xl font-display;
+
+    @screen sm {
+        @apply text-4xl leading-tight;
+    }
 
     @screen lg {
-        @apply text-4xl leading-tight;
+        @apply text-5xl;
+    }
+
+    @screen xl {
+        @apply text-6xl;
     }
 }
 
@@ -27,6 +35,10 @@ h3,.h3 {
 
     @screen lg {
         @apply text-4xl;
+    }
+
+    @screen xl {
+        @apply text-5xl;
     }
 }
 

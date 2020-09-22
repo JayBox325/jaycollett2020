@@ -28,4 +28,8 @@
             width: 20%;
         }
     }
+
+    .fullpage-inactive & {
+        display: none;
+    }
 }

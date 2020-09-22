@@ -2,10 +2,10 @@
     $r: &;
     position: relative;
 
-    > * {
-        position: relative;
-        z-index: 1;
-    }
+    // > * {
+    //     position: relative;
+    //     z-index: 1;
+    // }
 
     &:before {
         position: absolute;
