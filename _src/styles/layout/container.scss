@@ -3,9 +3,9 @@
     min-width: 300px;
     z-index: 1;
 
-    @screen xs {
-        // max-width: 1400px;
-    }
+    // @screen xs {
+    //     // max-width: 1400px;
+    // }
 
     @screen md {
         @apply px-16;

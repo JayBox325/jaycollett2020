@@ -107,10 +107,15 @@ export default function fullPageJS() {
 
                     let nextScrolling = destination.item.getAttribute('data-scrolling')
 
-                    $bgElement.attr('data-size', `${nextSize}`)
-                    $bgElement.attr('data-color', `${nextBg}`)
+                    if (nextBg.charAt(0) == '#') {
+                        $bgElement.css('background-color', `${nextBg}`)
+                        $bgElement.attr('data-color', 'hex')
+                    } else {
+                        $bgElement.removeAttr('style')
+                        $bgElement.attr('data-color', `${nextBg}`)
+                    }
 
-                    
+                    $bgElement.attr('data-size', `${nextSize}`)
 
                     if (nextScrolling == 'disable') {
                         fullpage_api.setAllowScrolling(false, 'down, up')

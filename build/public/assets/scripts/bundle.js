@@ -634,8 +634,16 @@ function fullPageJS() {
           var nextBg = destination.item.getAttribute('data-bg-color');
           var nextSize = destination.item.getAttribute('data-bg-size');
           var nextScrolling = destination.item.getAttribute('data-scrolling');
+
+          if (nextBg.charAt(0) == '#') {
+            $bgElement.css('background-color', "".concat(nextBg));
+            $bgElement.attr('data-color', 'hex');
+          } else {
+            $bgElement.removeAttr('style');
+            $bgElement.attr('data-color', "".concat(nextBg));
+          }
+
           $bgElement.attr('data-size', "".concat(nextSize));
-          $bgElement.attr('data-color', "".concat(nextBg));
 
           if (nextScrolling == 'disable') {
             fullpage_api.setAllowScrolling(false, 'down, up');
