@@ -36,12 +36,12 @@
             
                 <div class="grid lg:grid-cols-12 gap-6 lg:gap-0">
                     <div class="lg:col-span-6 text-white">
-                        <div class="lg:pr-16 lg:max-w-4xl lg:mx-auto">
+                        <div class="lg:pr-16 lg:max-w-4xl lg:mx-auto xl:px-20">
                             <h2 class="h1">An about section heading here lorem set amet.</h2>
                         </div>
                     </div>
                     <div class="lg:col-span-6 text-white lg:text-black">
-                        <div class="lg:pl-16 lg:max-w-4xl lg:mx-auto">
+                        <div class="lg:pl-16 lg:max-w-4xl lg:mx-auto xl:px-20">
                             <div class="w-content">
                                 <p class="font-bold">A freelance digital designer and developer in Bath, England.</p>
                                 <p>Where being detail-oriented is what make a project the best it can be. 1138 is not just a <a href="#" {{ macro.external(true) }}>Star Wars reference</a> hidden in plain sight, but for me, it represents a continued dedication to not forget the details that take a project further.</p>
@@ -60,9 +60,18 @@
 
 
     <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary">
-    
-        <div class="slide" data-bg-size="small" data-bg-color="primary">
         
+        <div class="slide" data-scrolling="disable" data-bg-size="full" data-bg-color="gray">
+            <div class="fullpage__inner row">
+                <div class="container">
+                    <div class="text-center max-w-7xl mx-auto">
+                        <h2 class="h1">Web design and development with a passion for the details built with <a href="https://craftcms.com/" {{ macro.external(true) }}>CraftCMS</a>.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide active" data-scrolling="active" data-bg-size="small" data-bg-color="primary">
             <div class="fullpage__inner row">
                 <div class="container lg:h-full">
                     
@@ -72,7 +81,7 @@
                             {% include 'elements/button' with {
                                 label: 'View my work',
                                 type: 'button',
-                                action: 'data-slide-move=right',
+                                action: 'data-slide-move=left',
                                 classes: 'btn--secondary text-white lg:text-black'
                             } %}
                         </div>
@@ -81,68 +90,34 @@
                 </div>
             </div>
         </div>
-        <div class="slide" data-bg-size="small" data-bg-color="stfc">
-            
-            <img src="http://placehold.it/600x1000" class="portfolio-image">
 
-            <div class="fullpage__inner row">
-                <div class="container lg:h-full">
-                    
-                    <div class="lg:ml-2/5 lg:pl-8 md:max-w-3xl xl:max-w-5xl xl:pl-16 lg:flex lg:items-center lg:h-full">
-                        <div class="">
-                            <div class="w-content text-white lg:text-black">
-                                <h2 class="h2 lg:max-w-2xl xl:max-w-3xl">Swindon Town FC Community Foundation</h2>
-                                <div class="w-content">
-                                    <p class="font-bold">Est eiusmod qui deserunt labore occaecat in voluptate incididunt. Culpa eu do aute nisi ea do irure occaecat cupidatat eiusmod enim dolore.</p>
-                                    <p>Amet minim sunt elit quis veniam tempor minim adipisicing proident dolor anim mollit sint eiusmod. Nulla qui sunt fugiat eiusmod culpa sunt sit ea. Exercitation Lorem Lorem mollit adipisicing enim sint elit mollit enim.</p>
-                                </div>
-                            </div>
-                            <div class="mt-6 lg:mt-8">
-                                {% include 'elements/button' with {
-                                    label: 'Visit project',
-                                    type: 'link',
-                                    action: 'https://www.stfcfoundation.com/',
-                                    external: true,
-                                    classes: 'btn--stfc text-white lg:text-black'
-                                } %}
-                            </div>
-                        </div>
-                    </div>
-
+            {# <div class="text-center max-w-4xl mx-auto mb-8 md:mb-16 lg:mb-20">
+                <div class="w-content">
+                    <h2 class="h1">Swindon Town FC Community Foundation</h2>
+                    <p class="lg:max-w-3xl mx-auto">Proident quis ut ut enim ullamco. Labore ex sint nostrud nostrud labore commodo ipsum veniam nostrud est mollit voluptate aliquip.</p>
                 </div>
-            </div>
-        </div>
-        <div class="slide" data-bg-size="small" data-bg-color="mamacodes">
-            
-            <img src="http://placehold.it/700x1000" class="portfolio-image">
-
-            <div class="fullpage__inner row">
-                <div class="container lg:h-full">
-                    
-                    <div class="lg:ml-2/5 lg:pl-8 md:max-w-3xl xl:max-w-5xl xl:pl-16 lg:flex lg:items-center lg:h-full">
-                        <div class="">
-                            <div class="text-white lg:text-black">
-                                <h2 class="h2 lg:max-w-2xl xl:max-w-3xl">MAMA.Codes</h2>
-                                <div class="w-content">
-                                    <p class="font-bold">Est eiusmod qui deserunt labore occaecat in voluptate incididunt. Culpa eu do aute nisi ea do irure occaecat cupidatat eiusmod enim dolore.</p>
-                                    <p>Amet minim sunt elit quis veniam tempor minim adipisicing proident dolor anim mollit sint eiusmod. Nulla qui sunt fugiat eiusmod culpa sunt sit ea. Exercitation Lorem Lorem mollit adipisicing enim sint elit mollit enim.</p>
-                                </div>
-                            </div>
-                            <div class="mt-6 lg:mt-8">
-                                {% include 'elements/button' with {
-                                    label: 'Visit project',
-                                    type: 'link',
-                                    action: 'https://www.mama.codes/',
-                                    external: true,
-                                    classes: 'btn--mamacodes text-white lg:text-black'
-                                } %}
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="mt-6 lg:mt-8">
+                    {% include 'elements/button' with {
+                        label: 'Visit site',
+                        type: 'link',
+                        external: true,
+                        action: 'https://stfcfoundation.com',
+                        classes: 'btn--stfc text-black hover:text-white'
+                    } %}
                 </div>
+            </div> #}
+
+            {# <div>
+                <img class="shadow-md mx-auto" src="/assets/images/desktop.png">
             </div>
-        </div>
+
+            <div class="text-left max-w-4xl mx-auto mt-8 lg:mt-12">
+                <div class="w-content">
+                    <p class="font-bold">Elit dolore consequat Lorem aute tempor. Lorem fugiat nisi nisi proident aliquip veniam anim culpa exercitation.</p>
+                    <p>Duis cupidatat voluptate cupidatat dolor eiusmod amet voluptate aliqua non occaecat exercitation proident incididunt pariatur.</p>
+                    <p>Qui ex amet mollit mollit aute esse esse Lorem. Nostrud mollit voluptate labore magna minim nostrud. Pariatur deserunt quis excepteur velit officia irure culpa minim mollit nostrud incididunt eiusmod esse enim.</p>
+                </div>
+            </div> #}
     </section>
 
     <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary">

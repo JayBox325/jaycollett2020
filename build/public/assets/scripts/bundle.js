@@ -633,11 +633,11 @@ function fullPageJS() {
         onSlideLeave: function onSlideLeave(section, origin, destination, direction) {
           var nextBg = destination.item.getAttribute('data-bg-color');
           var nextSize = destination.item.getAttribute('data-bg-size');
+          var nextScrolling = destination.item.getAttribute('data-scrolling');
           $bgElement.attr('data-size', "".concat(nextSize));
           $bgElement.attr('data-color', "".concat(nextBg));
 
-          if (destination.index > 0) {
-            console.log('DISABLE SCROLLING');
+          if (nextScrolling == 'disable') {
             fullpage_api.setAllowScrolling(false, 'down, up');
             fullpage_api.setKeyboardScrolling(false, 'down, up');
           } else {
@@ -663,8 +663,15 @@ function fullPageJS() {
     }
   }
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-slide-move=right').on('click', function () {
-    fullpage_api.moveSlideRight();
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-slide-move]').on('click', function () {
+    var direction = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-slide-move');
+    console.log(direction);
+
+    if (direction == 'right') {
+      fullpage_api.moveSlideRight();
+    } else {
+      fullpage_api.moveSlideLeft();
+    }
   });
 }
 

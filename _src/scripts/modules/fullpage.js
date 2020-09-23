@@ -105,11 +105,14 @@ export default function fullPageJS() {
                     let nextBg = destination.item.getAttribute('data-bg-color')
                     let nextSize = destination.item.getAttribute('data-bg-size')
 
+                    let nextScrolling = destination.item.getAttribute('data-scrolling')
+
                     $bgElement.attr('data-size', `${nextSize}`)
                     $bgElement.attr('data-color', `${nextBg}`)
 
-                    if (destination.index > 0) {
-                        console.log('DISABLE SCROLLING')
+                    
+
+                    if (nextScrolling == 'disable') {
                         fullpage_api.setAllowScrolling(false, 'down, up')
                         fullpage_api.setKeyboardScrolling(false, 'down, up')
                     } else {
@@ -137,7 +140,15 @@ export default function fullPageJS() {
         }
     }
 
-    $('[data-slide-move=right').on('click', function() {
-        fullpage_api.moveSlideRight()
+    $('[data-slide-move]').on('click', function() {
+        let direction = $(this).attr('data-slide-move')
+
+        console.log(direction)
+
+        if (direction == 'right') {  
+            fullpage_api.moveSlideRight()
+        } else {
+            fullpage_api.moveSlideLeft()
+        }
     })
 }

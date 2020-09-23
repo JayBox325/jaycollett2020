@@ -15,16 +15,20 @@
         }
     }
 
+    &[data-size=none] {
+        @screen lg {
+            width: 0%;
+        }
+    }
+
     &[data-size=half] {
         @screen lg {
-            height: 100%;
             width: 50%;
         }
     }
 
     &[data-size=small] {
         @screen lg {
-            height: 100%;
             width: 20%;
         }
     }

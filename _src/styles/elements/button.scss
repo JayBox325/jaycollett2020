@@ -47,11 +47,7 @@
 
     &--stfc {
         &:before {
-            @apply bg-black;
-            
-            @screen lg {
-                @apply bg-stfc;
-            }
+            @apply bg-stfc;
         }
     }
 
