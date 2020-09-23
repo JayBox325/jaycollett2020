@@ -1,5 +1,5 @@
 h1,.h1 {
-    @apply leading-tight text-3xl font-display;
+    @apply leading-tight text-4xl font-display;
 
     @screen sm {
         @apply text-6xl;
@@ -74,6 +74,7 @@ h5,.h5,
 h6,.h6 {
     a {
         position: relative;
+        transition: color .2s ease-in-out;
 
         &:before {
             @apply bg-orange-500;
@@ -86,11 +87,13 @@ h6,.h6 {
             bottom: 0;
             left: 50%;
             transform: translate3d(-50%,0,0);
-            transition: height .2s ease-in-out, width .2s ease-in-out;
+            transition: height .2s cubic-bezier(.8, 0.000, 0.000, 1), width .2s ease-in-out;
         }
 
         &:hover,
         &:focus {
+            color: color('white');
+
             &:before {
                 height: 100%;
                 width: calc(100% + 1rem);

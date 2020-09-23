@@ -59,15 +59,6 @@ export default function fullPageJS() {
                 scrollingSpeed: 1000,
                 easingcss3: easing, // http://matthewlein.com/ceaser/
 
-                // Sections
-                anchors: [
-                    'landing',
-                    'intro',
-                    'about',
-                    'portfolio',
-                    // 'blog'
-                ],
-
                 // Slides
                 scrollOverflow: true,
                 scrollOverflowReset: true,
@@ -104,6 +95,11 @@ export default function fullPageJS() {
                 onSlideLeave: function(section, origin, destination, direction) {
                     let nextBg = destination.item.getAttribute('data-bg-color')
                     let nextSize = destination.item.getAttribute('data-bg-size')
+                    let nextText = destination.item.getAttribute('data-text')
+
+                    setTimeout(function() {
+                        $(section.item).find('.fp-slidesNav').attr('data-theme', nextText)
+                    }, 300)
 
                     let nextScrolling = destination.item.getAttribute('data-scrolling')
 
@@ -123,6 +119,7 @@ export default function fullPageJS() {
                     } else {
                         fullpage_api.setAllowScrolling(true)
                         fullpage_api.setKeyboardScrolling(true)
+                        // section.item.attr('data-slide', '')
                     }
 
                     // if (!destination.item.classList.contains(visibleClass)) {
@@ -131,7 +128,9 @@ export default function fullPageJS() {
                     // }
                 },
 
-                // afterSlideLoad (section, origin, destination, direction) {
+                afterSlideLoad (section, origin, destination, direction) {
+                    $(section.item).attr('data-show-nav', $(destination.item).attr('data-show-nav'))
+                }
                 //     // console.log(`Loaded slide ${section.index}-${destination.index}`)
                 //     if (!destination.item.classList.contains(visibleClass)) {
                 //         if (elements.length === 0) {

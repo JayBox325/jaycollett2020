@@ -1,0 +1,44 @@
+{% set bgSize = bgSize ?? 'full' %}
+{% set bgTheme = bgTheme ?? 'gray' %}
+{% set textTheme = textTheme ?? 'black' %}
+
+{# Content #}
+{% set heading = heading %}
+{% set body = body ?? null %}
+{% set tags = tags ?? null %}
+{% set btn = btn ?? null %}
+{% set eyebrow = eyebrow ?? null %}
+
+<div class="slide" data-scrolling="disable" data-bg-size="{{ bgSize }}" data-bg-color="{{ bgTheme }}" data-anchor="{{ heading|kebab }}" data-show-nav="true" data-text="{{ textTheme }}">
+    <div class="fullpage__inner row text-{{ textTheme }}">
+        
+        <div class="container">
+            <div class="text-center max-w-5xl mx-auto">
+                {% if eyebrow %}
+                    <p class="font-bold opacity-50">{{ eyebrow|raw }}</p>
+                {% endif %}
+                <h2 class="h1">{{ heading|typogrify }}</h2>
+                <div class="max-w-3xl mt-4 mx-auto w-content">
+                    {% if body %}
+                        {{ body|raw }}
+                    {% endif %}
+                    {% if tags %}
+                        <p class="opacity-50 italic">{% for tag in tags %}{{ tag }}{% if not loop.last %} / {% endif %}{% endfor %}</P>
+                    {% endif %}
+                </div>
+            </div>
+            {% if btn %}
+                <div class="mt-6 text-center">
+                    {% include 'elements/button' with {
+                        label: 'See project',
+                        type: 'link',
+                        action: btn.action,
+                        theme: btn.theme,
+                        classes: btn.classes
+                    } %}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+</div>

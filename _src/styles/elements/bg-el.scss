@@ -16,19 +16,19 @@
     }
 
     &[data-size=none] {
-        @screen lg {
+        @screen md {
             width: 0%;
         }
     }
 
     &[data-size=half] {
-        @screen lg {
+        @screen md {
             width: 50%;
         }
     }
 
     &[data-size=small] {
-        @screen lg {
+        @screen md {
             width: 20%;
         }
     }

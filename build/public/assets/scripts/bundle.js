@@ -600,9 +600,6 @@ function fullPageJS() {
         scrollingSpeed: 1000,
         easingcss3: easing,
         // http://matthewlein.com/ceaser/
-        // Sections
-        anchors: ['landing', 'intro', 'about', 'portfolio' // 'blog'
-        ],
         // Slides
         scrollOverflow: true,
         scrollOverflowReset: true,
@@ -633,6 +630,10 @@ function fullPageJS() {
         onSlideLeave: function onSlideLeave(section, origin, destination, direction) {
           var nextBg = destination.item.getAttribute('data-bg-color');
           var nextSize = destination.item.getAttribute('data-bg-size');
+          var nextText = destination.item.getAttribute('data-text');
+          setTimeout(function () {
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(section.item).find('.fp-slidesNav').attr('data-theme', nextText);
+          }, 300);
           var nextScrolling = destination.item.getAttribute('data-scrolling');
 
           if (nextBg.charAt(0) == '#') {
@@ -650,14 +651,16 @@ function fullPageJS() {
             fullpage_api.setKeyboardScrolling(false, 'down, up');
           } else {
             fullpage_api.setAllowScrolling(true);
-            fullpage_api.setKeyboardScrolling(true);
+            fullpage_api.setKeyboardScrolling(true); // section.item.attr('data-slide', '')
           } // if (!destination.item.classList.contains(visibleClass)) {
           //     elements = getSectionElements(`${section.index}-${destination.index}`)
           //     hideElements(`${section.index}-${destination.index}`, elements)
           // }
 
-        } // afterSlideLoad (section, origin, destination, direction) {
-        //     // console.log(`Loaded slide ${section.index}-${destination.index}`)
+        },
+        afterSlideLoad: function afterSlideLoad(section, origin, destination, direction) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(section.item).attr('data-show-nav', jquery__WEBPACK_IMPORTED_MODULE_0___default()(destination.item).attr('data-show-nav'));
+        } //     // console.log(`Loaded slide ${section.index}-${destination.index}`)
         //     if (!destination.item.classList.contains(visibleClass)) {
         //         if (elements.length === 0) {
         //             elements = getSectionElements(`${section.index}-${destination.index}`)

@@ -23,7 +23,9 @@
         bottom: 0;
         left: 50%;
         transform: translate3d(-50%,.2rem,0);
-        transition: height .2s ease-in-out, width .2s ease-in-out;
+        transition: height .2s cubic-bezier(.8, 0.000, 0.000, 1), width .2s ease-in-out;
+
+	    background: var(--btn-theme);
     }
 
     &:hover,
@@ -31,29 +33,6 @@
         &:before {
             height: calc(100% + .2rem);
             width: calc(100% + 1rem);
-        }
-    }
-
-    &--secondary {
-        &:before {
-            @apply bg-orange-500;
-        }
-
-        &:hover,
-        &:focus {
-            @apply text-white;
-        }
-    }
-
-    &--stfc {
-        &:before {
-            @apply bg-stfc;
-        }
-    }
-
-    &--mamacodes {
-        &:before {
-            @apply bg-yellow-500;
         }
     }
 }

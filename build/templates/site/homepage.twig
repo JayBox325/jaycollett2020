@@ -3,7 +3,7 @@
 <div id="fullpage" class="fullpage">
     <div class="bg-el" data-bg-el data-size></div>
 
-    <section class="section fullpage__section text-white" data-bg-size="full" data-bg-color="primary">
+    <section class="section fullpage__section text-white" data-bg-size="full" data-bg-color="primary" data-anchor="landing">
         <div class="fullpage__inner row">
             <div class="container">
                 <div class="text-white w-full px-10 sm:px-16 lg:px-0">
@@ -20,31 +20,37 @@
         </div>
     </section>
     
-    <section class="section fullpage__section text-white" data-bg-size="full" data-bg-color="primary">
+    <section class="section fullpage__section text-black" data-bg-size="full" data-bg-color="gray" data-anchor="introduction">
         <div class="fullpage__inner row">
             <div class="container">
-                <div class="text-center max-w-7xl mx-auto">
-                    <h2 class="h1">Web design and development with a passion for the details built with <a href="https://craftcms.com/" {{ macro.external(true) }}>CraftCMS</a>.</h2>
+                <div class="text-center max-w-7xl mx-auto relative z-10">
+                    <h2 class="h1">{{ 'Web design and development with a passion for the details built with CraftCMS.'|typogrify }}</h2>
+                </div>
+                <div class="absolute opacity-25 w-9/12 max-w-3xl" style="z-index:0;top:50%;left:50%;transform:translate3d(-50%,-50%,0);">
+                    <img src="https://images.unsplash.com/photo-1495521939206-a217db9df264?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section fullpage__section" data-bg-size="half" data-bg-color="primary">
+    <section class="section fullpage__section" data-bg-size="half" data-bg-color="primary" data-anchor="about">
         <div class="fullpage__inner row">
             <div class="container">
             
-                <div class="grid lg:grid-cols-12 gap-6 lg:gap-0">
-                    <div class="lg:col-span-6 text-white">
-                        <div class="lg:pr-16 lg:max-w-4xl lg:mx-auto xl:px-20">
+                <div class="grid md:grid-cols-12 gap-6 md:gap-0">
+                    <div class="md:col-span-6 text-white">
+                        <div class="md:pr-16 md:max-w-4xl md:mx-auto xl:px-20">
                             <h2 class="h1">An about section heading here lorem set amet.</h2>
                         </div>
                     </div>
-                    <div class="lg:col-span-6 text-white lg:text-black">
-                        <div class="lg:pl-16 lg:max-w-4xl lg:mx-auto xl:px-20">
+                    <div class="md:col-span-6 text-white md:text-black">
+                        <div class="md:pl-16 md:max-w-4xl md:mx-auto xl:px-20">
                             <div class="w-content">
                                 <p class="font-bold">A freelance digital designer and developer in Bath, England.</p>
                                 <p>Where being detail-oriented is what make a project the best it can be. 1138 is not just a <a href="#" {{ macro.external(true) }}>Star Wars reference</a> hidden in plain sight, but for me, it represents a continued dedication to not forget the details that take a project further.</p>
+                            {# </div> #}
+                            {# <img class="my-6 lg:my-8" src="http://placehold.it/800x400"> #}
+                            {# <div class="w-content"> #}
                                 <h3>Doing good with what I do.</h3>
                                 <p>I pride myself in delivering projects for clients that do good in the world around them with accessible websites that are open to as many users as possible.</p>
                                 <p>Working with clients like Football Foundations and businesses that are developing future generations give me the opportunity to give back to the world with the skills I have.</p>
@@ -53,129 +59,121 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
     </section>
 
 
-    <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary">
+    <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary" data-anchor="porfolio">
+
+        {% include 'components/project' with {
+            bgTheme: 'gray',
+            textTheme: 'black',
+            eyebrow: '2018',
+            heading: 'Swindon Town FC Community Foundation',
+            body: '<p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>',
+            tags: [
+                'Branding',
+                'Design',
+                'Development',
+                'CraftCMS'
+            ],
+            btn: {
+                theme: '#dd1c15', 
+                classes: 'text-black',
+                action: '#'
+            }
+        } %}
         
-        <div class="slide" data-scrolling="disable" data-bg-size="full" data-bg-color="#dd1c15">
-            <div class="fullpage__inner row text-white">
-                
-                <div class="container">
-                    <div class="text-center max-w-5xl mx-auto">
-                        <h2 class="h1">
-                            {% filter typogrify %}
-                                Swindon Town FC Community Foundation
-                            {% endfilter %}
-                        </h2>
-                        <div class="max-w-3xl mt-4 mx-auto w-content">
-                            <p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>
-                            <p class="opacity-50 italic">Branding / Design / Front end / CraftCMS</P>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-center">
-                        {% include 'elements/button' with {
-                            label: 'See project',
-                            type: 'link',
-                            action: '#',
-                            classes: 'btn--stfc text-white'
-                        } %}
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        {% include 'components/project' with {
+            bgTheme: '#E3AE44',
+            textTheme: 'black',
+            eyebrow: '2018, 2019 &amp; 2020',
+            heading: 'Bristol Tattoo Convention',
+            body: '<p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>',
+            tags: [
+                'Design',
+                'Development',
+                'CraftCMS'
+            ],
+            btn: {
+                theme: '#739D9A', 
+                classes: 'text-black',
+                action: '#'
+            }
+        } %}
         
-        <div class="slide" data-scrolling="disable" data-bg-size="full" data-bg-color="#07A2C5">
-            <div class="fullpage__inner row text-white">
-                
-                <div class="container">
-                    <div class="text-center max-w-5xl mx-auto">
-                        <h2 class="h1">Mama Codes</h2>
-                        <div class="max-w-3xl mt-4 mx-auto w-content">
-                            <p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>
-                            <p class="opacity-50 italic">Design / Front end / CraftCMS</P>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-center">
-                        {% include 'elements/button' with {
-                            label: 'See project',
-                            type: 'link',
-                            action: '#',
-                            classes: 'btn--mamacodes text-black'
-                        } %}
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        {% include 'components/project' with {
+            bgTheme: '#07A2C5',
+            textTheme: 'white',
+            eyebrow: '2019',
+            heading: 'Mama Codes',
+            body: '<p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>',
+            tags: [
+                'Design',
+                'Development',
+                'CraftCMS'
+            ],
+            btn: {
+                theme: '#e84f4d', 
+                classes: 'text-white',
+                action: '#'
+            }
+        } %}
         
-        <div class="slide" data-scrolling="disable" data-bg-size="full" data-bg-color="#18A186">
-            <div class="fullpage__inner row text-white">
-                
+        {% include 'components/project' with {
+            bgTheme: '#18A186',
+            textTheme: 'white',
+            eyebrow: '2020',
+            heading: 'Mobility Reuse Outlet',
+            body: '<p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>',
+            tags: [
+                'Branding',
+                'Design',
+                'Development',
+                'CraftCMS'
+            ],
+            btn: {
+                theme: '#182742', 
+                classes: 'text-white',
+                action: '#'
+            }
+        } %}
+
+        <div class="slide active" data-scrolling="active" data-bg-size="small" data-bg-color="primary" data-anchor="portfolioLanding" data-show-nav="false" data-text="black">
+            <div class="fullpage__inner row text-white md:text-black">
                 <div class="container">
-                    <div class="text-center max-w-5xl mx-auto">
-                        <h2 class="h1">Mobility Reuse Outlet</h2>
-                        <div class="max-w-3xl mt-4 mx-auto w-content">
-                            <p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>
-                            <p class="opacity-50 italic">Branding / Design / Front end / CraftCMS</P>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-center">
-                        {% include 'elements/button' with {
-                            label: 'See project',
-                            type: 'link',
-                            action: '#',
-                            classes: 'btn--secondary text-black'
-                        } %}
-                    </div>
-                </div>
 
-            </div>
-        </div>
-        
-        <div class="slide" data-scrolling="disable" data-bg-size="full" data-bg-color="#E3AE44">
-            <div class="fullpage__inner row">
-                
                 <div class="container">
-                    <div class="text-center max-w-5xl mx-auto">
-                        <h2 class="h1">Bristol Tattoo Convention</h2>
-                        <div class="max-w-3xl mt-4 mx-auto w-content">
-                            <p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>
-                            <p class="opacity-50 italic">Design / Front end / CraftCMS</P>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-center">
-                        {% include 'elements/button' with {
-                            label: 'See project',
-                            type: 'link',
-                            action: '#',
-                            classes: 'btn--btc text-black'
-                        } %}
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="slide active" data-scrolling="active" data-bg-size="small" data-bg-color="primary">
-            <div class="fullpage__inner row text-black">
-                <div class="container lg:h-full">
-                    
-                    <div class="lg:ml-1/5 lg:pl-8 md:max-w-3xl xl:max-w-5xl xl:pl-16 lg:flex lg:flex-col lg:justify-between lg:h-full">
-                        <h2 class="h1 text-white lg:text-black">The projects that lorem set amet.</h2>
-                        <div class="mt-6 lg:mt-0">
+                    <div class="text-left max-w-4xl mx-auto relative z-10 md:pl-2/12 lg:pl-1/12">
+                        <h2 class="h1">{{ 'My projects lorem ipsum set amet dolor.'|typogrify }}</h2>
+                        <div class="mt-6">
                             {% include 'elements/button' with {
-                                label: 'View my work',
+                                label: 'See my work',
                                 type: 'button',
+                                theme: '#E5422B',
                                 action: 'data-slide-move=left',
-                                classes: 'btn--secondary text-white lg:text-black'
+                                classes: 'text-white md:text-black hover:text-white'
                             } %}
                         </div>
                     </div>
+                    {# <div class="absolute opacity-25" style="z-index:0;top:50%;left:50%;transform:translate3d(-50%,-50%,0);">
+                        <img src="https://images.unsplash.com/photo-1495521939206-a217db9df264?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+                    </div> #}
+                </div>
+                    
+                    {# <div class="md:ml-1/5 md:pl-8 md:max-w-3xl xl:max-w-5xl xl:pl-16 md:flex md:flex-col md:justify-between md:h-full">
+                        <h2 class="h1 text-white md:text-black">The projects that lorem set amet.</h2>
+                        <div class="mt-6 lg:mt-0">
+                            {% include 'elements/button' with {
+                                label: 'See my work',
+                                type: 'button',
+                                theme: '#E5422B',
+                                action: 'data-slide-move=left',
+                                classes: 'text-white md:text-black hover:text-white'
+                            } %}
+                        </div>
+                    </div> #}
 
                 </div>
             </div>
@@ -210,7 +208,7 @@
             </div> #}
     </section>
 
-    <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary">
+    <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary" data-anchor="blog">
         <div class="fullpage__inner row">
             <div class="container lg:h-full">
                 
