@@ -19,49 +19,18 @@
             <p class="scroll-indicator">Scroll to get started</p>
         </div>
     </section>
-    
-    <section class="section fullpage__section text-black" data-bg-size="full" data-bg-color="gray" data-anchor="introduction">
-        <div class="fullpage__inner row">
-            <div class="container">
-                <div class="text-center max-w-7xl mx-auto relative z-10">
-                    <h2 class="h1">{{ 'Web design and development with a passion for the details built with CraftCMS.'|typogrify }}</h2>
-                </div>
-                <div class="absolute opacity-25 w-9/12 max-w-3xl" style="z-index:0;top:50%;left:50%;transform:translate3d(-50%,-50%,0);">
-                    <img src="https://images.unsplash.com/photo-1495521939206-a217db9df264?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section fullpage__section" data-bg-size="half" data-bg-color="primary" data-anchor="about">
-        <div class="fullpage__inner row">
-            <div class="container">
-            
-                <div class="grid md:grid-cols-12 gap-6 md:gap-0">
-                    <div class="md:col-span-6 text-white">
-                        <div class="md:pr-16 md:max-w-4xl md:mx-auto xl:px-20">
-                            <h2 class="h1">An about section heading here lorem set amet.</h2>
-                        </div>
-                    </div>
-                    <div class="md:col-span-6 text-white md:text-black">
-                        <div class="md:pl-16 md:max-w-4xl md:mx-auto xl:px-20">
-                            <div class="w-content">
-                                <p class="font-bold">A freelance digital designer and developer in Bath, England.</p>
-                                <p>Where being detail-oriented is what make a project the best it can be. 1138 is not just a <a href="#" {{ macro.external(true) }}>Star Wars reference</a> hidden in plain sight, but for me, it represents a continued dedication to not forget the details that take a project further.</p>
-                            {# </div> #}
-                            {# <img class="my-6 lg:my-8" src="http://placehold.it/800x400"> #}
-                            {# <div class="w-content"> #}
-                                <h3>Doing good with what I do.</h3>
-                                <p>I pride myself in delivering projects for clients that do good in the world around them with accessible websites that are open to as many users as possible.</p>
-                                <p>Working with clients like Football Foundations and businesses that are developing future generations give me the opportunity to give back to the world with the skills I have.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    {% for block in entry.homepageBuilder.all() %}
 
-            </div>
-        </div>
-    </section>
+        {% switch block.type %}
+            {% case 'feature' %}
+                {% include 'components/feature' %}
+
+            {% case 'bodySplit' %}
+                {% include 'components/body-split' %}
+        {% endswitch %}
+
+    {% endfor %}
 
 
     <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary" data-anchor="porfolio">
@@ -155,12 +124,10 @@
 
         <div class="slide active" data-scrolling="active" data-bg-size="small" data-bg-color="primary" data-anchor="portfolioLanding" data-show-nav="false" data-text="black">
             <div class="fullpage__inner row text-white md:text-black">
-                <div class="container">
-
-                <div class="container">
+                <div class="container md:h-full md:flex md:items-center">
                     <div class="text-left max-w-4xl mx-auto relative z-10 md:pl-2/12 lg:pl-1/12">
                         <h2 class="h1">{{ 'My projects lorem ipsum set amet dolor.'|typogrify }}</h2>
-                        <div class="mt-6">
+                        <div class="mt-6 lg:mt-10 2xl:mt-16">
                             {% include 'elements/button' with {
                                 label: 'See my work',
                                 type: 'button',
@@ -170,24 +137,6 @@
                             } %}
                         </div>
                     </div>
-                    {# <div class="absolute opacity-25" style="z-index:0;top:50%;left:50%;transform:translate3d(-50%,-50%,0);">
-                        <img src="https://images.unsplash.com/photo-1495521939206-a217db9df264?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-                    </div> #}
-                </div>
-                    
-                    {# <div class="md:ml-1/5 md:pl-8 md:max-w-3xl xl:max-w-5xl xl:pl-16 md:flex md:flex-col md:justify-between md:h-full">
-                        <h2 class="h1 text-white md:text-black">The projects that lorem set amet.</h2>
-                        <div class="mt-6 lg:mt-0">
-                            {% include 'elements/button' with {
-                                label: 'See my work',
-                                type: 'button',
-                                theme: '#E5422B',
-                                action: 'data-slide-move=left',
-                                classes: 'text-white md:text-black hover:text-white'
-                            } %}
-                        </div>
-                    </div> #}
-
                 </div>
             </div>
         </div>

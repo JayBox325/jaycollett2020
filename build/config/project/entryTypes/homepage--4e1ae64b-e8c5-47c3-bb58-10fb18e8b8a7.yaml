@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 989f6b5c-82cf-4a15-aa85-fe9b821cee4b
+            fieldUid: 4694854a-289c-4c9a-ad9a-e2252cdb0e28
             instructions: null
             label: null
             required: false
@@ -50,6 +50,19 @@ fieldLayouts:
             width: 100
         name: Options
         sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 7fdd5aee-0781-486e-810f-9af57a6cd8ce
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 3
 handle: homepage
 hasTitleField: true
 name: Homepage

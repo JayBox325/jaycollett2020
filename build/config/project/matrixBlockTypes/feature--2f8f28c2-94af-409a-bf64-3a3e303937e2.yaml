@@ -1,0 +1,106 @@
+field: 4694854a-289c-4c9a-ad9a-e2252cdb0e28
+fieldLayouts:
+  3e392bed-df14-4bc5-ad7e-7bfbb4217c27:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 20f1a1b9-e918-445f-9060-3ee06f9ea550
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 25dcc4cb-4d8b-4ad9-9d8d-365a2babfaa9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ece97d3c-cd9f-499f-a65e-f7bd95b4345a
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  20f1a1b9-e918-445f-9060-3ee06f9ea550:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  25dcc4cb-4d8b-4ad9-9d8d-365a2babfaa9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundImage
+    instructions: ''
+    name: 'Background image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowedKinds:
+        - image
+        - video
+      defaultUploadLocationSource: 'volume:85402e79-b5f4-49d2-b19b-4210804143c7'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:696a96fe-981a-49b3-8947-b85b4ec0dc06'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:696a96fe-981a-49b3-8947-b85b4ec0dc06'
+        - 'volume:85402e79-b5f4-49d2-b19b-4210804143c7'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  ece97d3c-cd9f-499f-a65e-f7bd95b4345a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: backgroundColour
+    instructions: ''
+    name: 'Background colour'
+    searchable: false
+    settings:
+      palette: ''
+      useConfigFile: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: percipioglobal\colourswatches\fields\ColourSwatches
+handle: feature
+name: Feature
+sortOrder: 2

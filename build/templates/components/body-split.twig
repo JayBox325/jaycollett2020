@@ -1,0 +1,22 @@
+<section class="section fullpage__section" data-bg-size="half" data-bg-color="primary" data-anchor="about">
+    <div class="fullpage__inner row">
+        <div class="container">
+            <div class="grid md:grid-cols-12 gap-6 md:gap-0">
+                <div class="md:col-span-6 text-white">
+                    {% if block.heading|length %}
+                        <div class="md:pr-16 md:max-w-4xl md:mx-auto xl:px-20">
+                            <h2 class="h1">{{ block.heading }}</h2>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="md:col-span-6 text-white md:text-black">
+                    <div class="md:pl-16 md:max-w-4xl md:mx-auto xl:px-20">
+                        <div class="w-content">
+                            {{ block.body }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

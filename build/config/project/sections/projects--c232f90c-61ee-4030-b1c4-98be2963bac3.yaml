@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: projects
+name: Projects
+propagationMethod: all
+siteSettings:
+  f1e03893-0fd0-4d36-87b3-4269d461b769:
+    enabledByDefault: true
+    hasUrls: true
+    template: /site/_index
+    uriFormat: 'projects/{slug}'
+type: channel

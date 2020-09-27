@@ -1,0 +1,20 @@
+<section class="section fullpage__section text-black" data-bg-size="full" data-bg-color="{{ block.backgroundColour.label }}" data-anchor="feature-{{ loop.index }}">
+    <div class="fullpage__inner row">
+        <div class="container">
+
+            <div class="text-center max-w-7xl mx-auto relative z-10">
+                <h2 class="h1">{{ block.heading|typogrify }}</h2>
+            </div>
+
+            {% if block.backgroundImage|length %}
+                {% set img = block.backgroundImage.one() %}
+                <div class="absolute opacity-25 w-9/12 max-w-3xl" style="z-index:0;top:50%;left:50%;transform:translate3d(-50%,-50%,0);">
+                    <img src="{{ img.url() }}" alt="">
+                </div>
+            {% endif %}
+
+
+
+        </div>
+    </div>
+</section>

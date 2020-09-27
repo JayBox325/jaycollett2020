@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 792988f8-7d15-4596-8171-84de845b5608
+handle: homepageBuilder
+instructions: ''
+name: 'Homepage builder'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_homepagebuilder}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

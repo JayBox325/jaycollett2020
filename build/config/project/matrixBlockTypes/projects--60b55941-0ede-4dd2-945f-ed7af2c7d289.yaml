@@ -1,0 +1,99 @@
+field: 4694854a-289c-4c9a-ad9a-e2252cdb0e28
+fieldLayouts:
+  58fc847a-b1b9-483a-a30a-5901e564a673:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b41abe92-8430-4f5b-ae3e-bfd93b6a4f31
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3dde29cd-42f4-4739-936b-48a8c0fb0057
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 02af3a35-3ce3-4cc3-aa5c-64e57dbbf2e8
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  02af3a35-3ce3-4cc3-aa5c-64e57dbbf2e8:
+    contentColumnType: string
+    fieldGroup: null
+    handle: projects
+    instructions: ''
+    name: Projects
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Add a project'
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:c232f90c-61ee-4030-b1c4-98be2963bac3'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  3dde29cd-42f4-4739-936b-48a8c0fb0057:
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonLabel
+    instructions: ''
+    name: 'Button label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b41abe92-8430-4f5b-ae3e-bfd93b6a4f31:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: projects
+name: Projects
+sortOrder: 3
