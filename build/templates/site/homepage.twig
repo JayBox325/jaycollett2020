@@ -67,6 +67,19 @@
     <section class="section fullpage__section" data-bg-size="small" data-bg-color="primary" data-anchor="porfolio">
 
         {% include 'components/project' with {
+            bgTheme: 'primary',
+            textTheme: 'white',
+            eyebrow: null,
+            heading: "Let's work together",
+            body: '<p>Quis magna eiusmod non deserunt culpa officia ad qui cupidatat incididunt sunt tempor consectetur. Anim do officia aliqua eu dolor. Ad ea ea laboris reprehenderit tempor id in anim irure ipsum occaecat dolor.</p>',
+            btn: {
+                classes: 'btn--secondary text-white',
+                action: '#',
+                label: 'Get in touch'
+            }
+        } %}
+
+        {% include 'components/project' with {
             bgTheme: 'gray',
             textTheme: 'black',
             eyebrow: '2018',

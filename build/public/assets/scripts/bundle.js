@@ -612,21 +612,14 @@ function fullPageJS() {
           var nextBg = destination.item.getAttribute('data-bg-color');
           var nextSize = destination.item.getAttribute('data-bg-size');
           $bgElement.attr('data-size', "".concat(nextSize));
-          $bgElement.attr('data-color', "".concat(nextBg)); // // Hiding elements on next slide
-          // if (!destination.item.classList.contains(preparedClass)) {
-          //     elements = getSectionElements(`${destination.index}-0`)
-          //     hideElements(`${destination.index}-0`, elements)
-          // }
+          $bgElement.attr('data-color', "".concat(nextBg));
         },
-        // afterLoad: function(origin, destination, direction){
-        //     if (!destination.item.classList.contains(visibleClass)) {
-        //         if (elements.length === 0) {
-        //             elements = getSectionElements(`${destination.index}-0`)
-        //         }
-        //         enterTransition(`${destination.index}-0`, elements)
-        //         elements = []
-        //     }
-        // },
+        afterLoad: function afterLoad(origin, destination, direction) {
+          var bg = destination.item.getAttribute('data-bg-color');
+          var size = destination.item.getAttribute('data-bg-size');
+          $bgElement.attr('data-size', "".concat(size));
+          $bgElement.attr('data-color', "".concat(bg));
+        },
         onSlideLeave: function onSlideLeave(section, origin, destination, direction) {
           var nextBg = destination.item.getAttribute('data-bg-color');
           var nextSize = destination.item.getAttribute('data-bg-size');
@@ -652,24 +645,11 @@ function fullPageJS() {
           } else {
             fullpage_api.setAllowScrolling(true);
             fullpage_api.setKeyboardScrolling(true); // section.item.attr('data-slide', '')
-          } // if (!destination.item.classList.contains(visibleClass)) {
-          //     elements = getSectionElements(`${section.index}-${destination.index}`)
-          //     hideElements(`${section.index}-${destination.index}`, elements)
-          // }
-
+          }
         },
         afterSlideLoad: function afterSlideLoad(section, origin, destination, direction) {
           jquery__WEBPACK_IMPORTED_MODULE_0___default()(section.item).attr('data-show-nav', jquery__WEBPACK_IMPORTED_MODULE_0___default()(destination.item).attr('data-show-nav'));
-        } //     // console.log(`Loaded slide ${section.index}-${destination.index}`)
-        //     if (!destination.item.classList.contains(visibleClass)) {
-        //         if (elements.length === 0) {
-        //             elements = getSectionElements(`${section.index}-${destination.index}`)
-        //         }
-        //         enterTransition(`${section.index}-${destination.index}`, elements)
-        //         elements = []
-        //     }
-        // },
-
+        }
       });
     }
   }

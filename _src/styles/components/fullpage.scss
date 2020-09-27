@@ -167,13 +167,13 @@
  #fp-nav,
  .fp-slidesNav {
      ul li a span {
+        @apply bg-black;
         border-radius: 50%;
         position: absolute;
         z-index: 1;
         height: 4px;
         width: 4px;
         border: 0;
-        background: color('black');
         left: 50%;
         top: 50%;
         margin: -2px 0 0 -2px;
@@ -185,13 +185,13 @@
 
     &[data-theme=black] {
         ul li a span {
-            background: color('black');
+            @apply bg-black;
         }
     }
 
     &[data-theme=white] {
         ul li a span {
-            background: color('white');
+            @apply bg-white;
         }
     }
  }

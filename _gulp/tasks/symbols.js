@@ -19,25 +19,25 @@ import changed from 'gulp-changed'
 if (projectConfig.craft) {
     gulp.task('symbols', () => {
         return gulp.src(paths.assets.svg.src)
-        .pipe(changed(paths.assets.images.src))
-        .pipe(svgSymbols({
-            templates: [`default-svg`]
-        }))
-        .pipe(extReplace('.twig'))
-        .on('error', handleErrors)
-        .pipe(gulp.dest(paths.symbols.dest))
-        .pipe(development(browserSync.reload({ stream: true })))
+            .pipe(changed(paths.assets.images.src))
+            .pipe(svgSymbols({
+                templates: [`default-svg`]
+            }))
+            .pipe(extReplace('.twig'))
+            .on('error', handleErrors)
+            .pipe(gulp.dest(paths.symbols.dest))
+            .pipe(development(browserSync.reload({ stream: true })))
     })
 } else {
     gulp.task('symbols', () => {
         return gulp.src(paths.assets.svg.src)
-        .pipe(changed(paths.assets.images.src))
-        .pipe(svgSymbols({
-            templates: [`default-svg`]
-        }))
-        .pipe(extReplace('.njk'))
-        .on('error', handleErrors)
-        .pipe(gulp.dest(paths.symbols.dest))
-        .pipe(development(browserSync.reload({ stream: true })))
+            .pipe(changed(paths.assets.images.src))
+            .pipe(svgSymbols({
+                templates: [`default-svg`]
+            }))
+            .pipe(extReplace('.njk'))
+            .on('error', handleErrors)
+            .pipe(gulp.dest(paths.symbols.dest))
+            .pipe(development(browserSync.reload({ stream: true })))
     })
 }

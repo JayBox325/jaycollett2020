@@ -74,23 +74,15 @@ export default function fullPageJS() {
 
                     $bgElement.attr('data-size', `${nextSize}`)
                     $bgElement.attr('data-color', `${nextBg}`)
-
-                    // // Hiding elements on next slide
-                    // if (!destination.item.classList.contains(preparedClass)) {
-                    //     elements = getSectionElements(`${destination.index}-0`)
-                    //     hideElements(`${destination.index}-0`, elements)
-                    // }
                 },
 
-                // afterLoad: function(origin, destination, direction){
-                //     if (!destination.item.classList.contains(visibleClass)) {
-                //         if (elements.length === 0) {
-                //             elements = getSectionElements(`${destination.index}-0`)
-                //         }
-                //         enterTransition(`${destination.index}-0`, elements)
-                //         elements = []
-                //     }
-                // },
+                afterLoad: function(origin, destination, direction){
+                    let bg = destination.item.getAttribute('data-bg-color')
+                    let size = destination.item.getAttribute('data-bg-size')
+
+                    $bgElement.attr('data-size', `${size}`)
+                    $bgElement.attr('data-color', `${bg}`)
+                },
                 
                 onSlideLeave: function(section, origin, destination, direction) {
                     let nextBg = destination.item.getAttribute('data-bg-color')
@@ -121,25 +113,11 @@ export default function fullPageJS() {
                         fullpage_api.setKeyboardScrolling(true)
                         // section.item.attr('data-slide', '')
                     }
-
-                    // if (!destination.item.classList.contains(visibleClass)) {
-                    //     elements = getSectionElements(`${section.index}-${destination.index}`)
-                    //     hideElements(`${section.index}-${destination.index}`, elements)
-                    // }
                 },
 
                 afterSlideLoad (section, origin, destination, direction) {
                     $(section.item).attr('data-show-nav', $(destination.item).attr('data-show-nav'))
                 }
-                //     // console.log(`Loaded slide ${section.index}-${destination.index}`)
-                //     if (!destination.item.classList.contains(visibleClass)) {
-                //         if (elements.length === 0) {
-                //             elements = getSectionElements(`${section.index}-${destination.index}`)
-                //         }
-                //         enterTransition(`${section.index}-${destination.index}`, elements)
-                //         elements = []
-                //     }
-                // },
             })
         }
     }

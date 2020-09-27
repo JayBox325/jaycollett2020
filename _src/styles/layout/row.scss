@@ -2,10 +2,10 @@
     $r: &;
     position: relative;
 
-    // > * {
-    //     position: relative;
-    //     z-index: 1;
-    // }
+    > * {
+        position: relative;
+        z-index: 1;
+    }
 
     &:before {
         position: absolute;
@@ -17,7 +17,7 @@
         z-index: 0;
     }
     
-    @apply py-10;
+    @apply py-6;
 
     @screen sm {
         @apply py-16;
@@ -34,9 +34,7 @@
 
     @each $name, $hex in $colors {
         &--#{$name} {
-            // Setting the text colour based on how dark/light the bg is.
-            // @debug "Hex: #{$hex}";
-            // color: set-text-color($hex);
+            @include text-color($name);
             
             &:before {
                 background-color: $hex;

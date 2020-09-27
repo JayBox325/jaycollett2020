@@ -35,4 +35,12 @@
             width: calc(100% + 1rem);
         }
     }
+
+    @each $name, $hex in $colors {
+        &--#{$name} {
+            &:before {
+                background-color: $hex;
+            }
+        }
+    }
 }

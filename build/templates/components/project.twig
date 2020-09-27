@@ -30,11 +30,11 @@
             {% if btn %}
                 <div class="mt-6 text-center">
                     {% include 'elements/button' with {
-                        label: 'See project',
+                        label: btn.label ?? 'See project',
                         type: 'link',
                         action: btn.action,
-                        theme: btn.theme,
-                        classes: btn.classes
+                        theme: btn.theme ?? null,
+                        classes: btn.classes ?? null
                     } %}
                 </div>
             {% endif %}

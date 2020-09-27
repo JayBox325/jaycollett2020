@@ -14,10 +14,12 @@ const paths = {
     njks: {
         render: `_src/html`,
         src: `_src/html/pages/*.njk`,
-        watch: `_src/html/**/*.njk`,
-        data: `_src/html/__data/data.json`,
+        watch: `_src/html/**/*`,
+        data: `./_src/data.json`,
         dest: `build`,
-        storage: `_gulp/html`
+        moveDest: `_src`,
+        access: `./_src/html/_layout/_base.njk`,
+        storage: `_gulp/html/**`
     },
 
     twig: {
@@ -60,7 +62,7 @@ const paths = {
     },
 
     symbols: {
-        dest: projectConfig.craft ? `build/templates/_layout` : `_src/html/_layout`
+        dest: projectConfig.craft ? `build/templates/_includes` : `_src/html/_includes`
     },
 
     rev: {

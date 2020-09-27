@@ -5,34 +5,28 @@
 
 */
 
-// Project brand colours
-$primary:           theme('colors.green.500');
-$secondary:         theme('colors.orange.500');
-
-// Base colours
-$black:             theme('colors.gray.800');
-$white:             theme('colors.white');
-$gray:              theme('colors.gray.100');
-$success:           theme('colors.green.700');
-$warning:           theme('colors.red.700');
-$info:              theme('colors.yellow-600');
-
-// Social media brand colours
-$facebook:          theme('colors.facebook');
-$twitter:           theme('colors.twitter');
-$instagram:         theme('colors.instagram');
-$pinterest:         theme('colors.pinterest');
+// Configure which colors need black text after testing with an accessibility checker.
+$lightBackgrounds: white, gray;
 
 // Colour map used with color('primary')
 $colors: (
-    'primary':      $primary,
-    'secondary':    $secondary,
-    'success':      $success,
-    'info':         $info,
-    'warning':      $warning,
-    'gray':         $gray,
-    'white':        $white,
-    'black':        $black,
-    'stfc':         theme('colors.stfc'),
-    'mamacodes':    theme('colors.mamacodes')
+    // Project colours
+    primary:         theme('colors.primary.500'),
+    secondary:       theme('colors.secondary.500'),
+
+    // Core colours
+    white:          theme('colors.white'),
+    black:          theme('colors.gray.800'),
+    gray:           theme('colors.gray.200'),
+
+    // Contextual
+    yellow:         theme('colors.yellow-600'),
+    red:            theme('colors.red.700'),
+);
+
+$social: (
+    facebook:       theme('colors.facebook.500'),
+    twitter:        theme('colors.twitter.500'),
+    instagram:      theme('colors.instagram.500'),
+    pinterest:      theme('colors.pinterest.500'),
 );
