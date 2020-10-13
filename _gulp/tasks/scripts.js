@@ -1,5 +1,4 @@
 import gulp from 'gulp'
-import notify from 'gulp-notify'
 import browserSync from 'browser-sync'
 
 // Config
@@ -7,6 +6,7 @@ import paths from '../path.config'
 import config from '../config'
 import webpackConfig from '../webpack.config'
 import handleErrors from '../utils/handleErrors'
+import projectConfig from '../../project.config'
 
 // Environment config
 const development = config.env.development
@@ -16,12 +16,16 @@ const production = config.env.production
 import webpack from 'webpack'
 import webpackStream from 'webpack-stream'
 import uglify from 'gulp-uglify'
+import gzip from 'gulp-gzip'
+import gulpif from 'gulp-if'
 
+// Compile scripts with Webpack
 gulp.task('scripts', (cb) => {
     gulp.src(paths.js.app)
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
 
+        // Minify for production
         .pipe(production(uglify()))
 
         .pipe(gulp.dest(paths.js.dest))
@@ -29,10 +33,4 @@ gulp.task('scripts', (cb) => {
         
         .pipe(development(browserSync.reload({ stream: true })));
     cb()
-})
-
-gulp.task('move-scripts', () => {
-    return gulp.src(paths.js.vendor)
-        .pipe(gulp.dest(paths.js.dest))
-        .on('error', handleErrors)
 })

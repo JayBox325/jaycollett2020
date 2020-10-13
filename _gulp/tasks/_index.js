@@ -27,7 +27,6 @@ gulp.task('build', gulp.series(
 		'svg',
 		'symbols',
 		'move-favicons',
-		'move-scripts',
 		'move-fonts',
 		'move-videos',
 		'images',
